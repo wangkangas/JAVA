@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: fund
+        uri: http://localhost:9000
+        predicates:
+        - Path=/users/**
+        filters:
+        - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+  application:
+    name: GateWay-Base
+server:
+  port: 7000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
