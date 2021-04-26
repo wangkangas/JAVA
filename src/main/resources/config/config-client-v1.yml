@@ -1,0 +1,5 @@
+server:
+    port: 3001
+    
+version:
+    message: client-20210421 V0.1
